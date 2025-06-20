@@ -1,0 +1,15 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.removeUnused": "never",
+    "source.organizeImports": "never",
+    "source.fixAll.eslint": "explicit"
+  },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "prettier.requireConfig": true,
+  "typescript.preferences.importModuleSpecifier": "shortest",
+  "typescript.reportUnusedImports": "error",
+  "javascript.updateImportsOnFileMove.enabled": "never"
+}
