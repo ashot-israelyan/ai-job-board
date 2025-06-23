@@ -6,7 +6,7 @@ import {
 } from '@clerk/nextjs/server';
 import { EventSchemas, Inngest } from 'inngest';
 
-import { JobListingTable } from '@/drizzle/schema';
+import { JobListingApplicationTable, JobListingTable } from '@/drizzle/schema';
 
 type ClerkWebhookData<T> = {
   data: {
@@ -43,6 +43,21 @@ type Events = {
         typeof JobListingTable.$inferSelect,
         'createdAt' | 'postedAt' | 'updatedAt' | 'status' | 'organizationId'
       > & { organizationName: string })[];
+    };
+    user: {
+      email: string;
+      name: string;
+    };
+  };
+  'app/email.daily-organization-user-applications': {
+    data: {
+      applications: (Pick<typeof JobListingApplicationTable.$inferSelect, 'rating'> & {
+        userName: string;
+        organizationId: string;
+        organizationName: string;
+        jobListingId: string;
+        jobListingTitle: string;
+      })[];
     };
     user: {
       email: string;
